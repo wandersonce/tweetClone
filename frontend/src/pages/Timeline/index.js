@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import api from '../../service/api';
 
 import twitterLogo from '../../twitter.svg';
 import './styles.css';
@@ -17,7 +18,6 @@ export default class Timeline extends Component {
 
         const content = this.state.newTweet;
         const author = localStorage.getItem("@GoTwitter:username")
-        console.log(content);
 
     };
 
