@@ -1,30 +1,20 @@
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    borderBottomWidth: 1,
-    borderColor: "#eee"
-  },
+import React, { Component } from 'react';
 
-  author: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#1C2022"
-  },
+import './styles.css'
+import Like from '../like.svg';
 
-  content: {
-    fontSize: 15,
-    lineHeight: 20,
-    color: "#1C2022",
-    marginVertical: 10
-  },
-
-  likeButton: {
-    flexDirection: "row",
-    alignItems: "center"
-  },
-
-  likeText: {
-    color: "#999",
-    marginLeft: 5
-  }
-});
+export default class Tweet extends Component {
+    render() {
+        const { tweet } = this.props
+        return (
+            <li className="tweet">
+                <strong>{tweet.author}</strong>
+                <p>{tweet.content}</p>
+                <button type="button">
+                    <img src={Like} alt="Like" />
+                    {tweet.likes}
+                </button>
+            </li>
+        )
+    }
+}
